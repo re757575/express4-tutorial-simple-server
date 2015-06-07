@@ -3,9 +3,11 @@ extends layout
 block content
 	h1 Welcome to #{title}
 	if user
-		h3 Hello #{user.username} 
+		h3 Hello #{user.username}
 		h2
 			a(href="/user/#{user.id}") Profile
+		h2
+			a(href="/shell-script") ShellScript
 		h2
 			a(href="/signout") Sign Out
 	else

@@ -2,13 +2,14 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var session = require('express-session')
+var session = require('express-session');
 
 // loading routes
 var index = require('./routes/index');
 var login = require('./routes/login');
 var signup = require('./routes/signup');
 var user = require('./routes/user');
+var shellScript = require('./routes/shell-script');
 
 var app = express();
 
@@ -23,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
     secret : "SHUUUUSH",
     saveUninitialized: true,
-    resave : false 
+    resave : false
 }))
 
 // attaching routes to the application
@@ -31,6 +32,7 @@ app.use(index);
 app.use(login);
 app.use(signup);
 app.use(user);
+app.use(shellScript);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    h1 Shell Script
+
+    form(action='/shell-script',method='post')
+        input(type='text', name='command', value='' placeholder="Shell Scipt")
+        input(type='submit', value='post')
+
+    if result
+        h3 command : #{command}
+        h3 server result :
+        div #{result}

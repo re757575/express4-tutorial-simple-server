@@ -1,11 +1,11 @@
 var _db = [];
 
 _db.push({
-	username: 'DanialK',
-	password: 'pass',
-	email : 'dani_khosravi@yahoo.com',
+	username: 'root',
+	password: '0000',
+	email : '0000@email.com',
 	first_name : 'Danial',
-	last_name : 'Khosravi',
+	last_name : 'alex',
 	id : '1'
 });
 
@@ -18,7 +18,7 @@ var usersCollection = {
 
 	getUser : function(id){
 		for (var i = 0; i < _db.length; i++) {
-			var user = _db[i]; 
+			var user = _db[i];
 			if(user.id == id)
 				return user
 		};
